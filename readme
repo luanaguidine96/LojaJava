@@ -1,0 +1,61 @@
+Categoria	Tipos de produto
+
+Produto	Um item do cardápio
+
+ItemPedido	Um produto + quantidade escolhida
+
+Pedido	O carrinho de compras
+
+FLUXO GERAL
+1-A loja inicia (Main): cria o cardápio 
+(ArrayList<Produto>) 
+e fabrica 5 produtos
+ cada um já nascendo com nome, preço, estoque e categoria.
+
+2- Cria um carrinho vazio 
+(Pedido pedido = new Pedido())
+ pronto pra receber escolhas
+
+ 3-O loop do menu começa (do-while):
+  o programa fica repetindo "o que você quer fazer?" 
+  até a pessoa digitar 3 e encerrar o programa
+
+4-Cliente escolhe um produto e uma quantidade 
+o Main chama
+ pedido.adicionarItem(produto, quantidade).
+
+ 5-uma classe pergunta pra outra
+ Pedido não decide sozinho se pode vender
+ Ele pergunta pro Produto: "você tem estoque suficiente?" 
+ (produto.retirarEstoque(quantidade))
+Se o Produto disser true, o Pedido fabrica 
+um ItemPedido (juntando aquele produto + a quantidade)
+ e guarda na sua lista itens.
+Se disser false, nada é adicionado.
+
+6-Cliente pede pra finalizar 
+ Main chama pedido.mostrarPedido()
+ E aqui de novo, tem uma cadeia de perguntas:
+Pedido passeia pela sua lista de ItemPedido e
+ pede pra cada um se mostrar sozinho (item.mostrarItem())
+Cada ItemPedido, pra se mostrar, pergunta pro seu próprio 
+Produto o nome (produto.getNome()) e calcula o subtotal 
+(produto.getPreco() * quantidade)
+No final, Pedido soma tudo com calcularTotal()
+ que também passeia pelos itens perguntando o subtotal 
+ de cada um
+
+
+ ----cada um cuida da sua própria responsabilidade----
+ O Main nunca desconta estoque diretamente. Ele só manda o 
+ pedido "adicionar item", e quem decide se pode ou não é o
+  próprio Produto (através do retirarEstoque).
+O Pedido nunca calcula o preço final sozinho
+ olhando pro produto direto. Ele delega pro ItemPedido
+  (item.calcularSubtotal()), que por sua vez delega pro Produto
+   (produto.getPreco()).
+
+   É tipo uma empresa bem organizada: o gerente (Main)
+    não vai lá mexer no estoque pessoalmente 
+     ele pede pro carrinho (Pedido), que pede pro produto 
+     (Produto) fazer isso. Cada um só mexe no que é "seu"

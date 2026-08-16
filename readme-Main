@@ -1,0 +1,79 @@
+MAIN - APRENDIZADO
+
+ArrayList<Produto>
+Quero uma lista que armazene APENAS objetos do tipo Produto.
+vou comparar o ArrayList a uma prateleira 
+
+
+new Produto
+fabrica um produto...
+
+produtos.add
+...para por na prateleira
+
+Pedido pedido = new Pedido();
+pega um carrinho de compras vazio pra pessoa usar.
+uma variável chamada pedido que será do tipo Pedido
+
+new Pedido();
+criar um novo objeto da classe Pedido
+Cria um novo objeto Pedido e guarde ele na variável chamada pedido
+
+
+do (traduzindo : faça){
+1- Mostra o cardápio de opções na tela
+2-Espera você digitar um número para  Scanner lê
+switch case{
+3-Olha esse número e decide o que fazer (switch)    
+}
+}
+while -  esse loop so para quando vocÊ digita 3, toda vez que
+ o do finaliza o while pergunta se o 3 ja foi digitado
+
+
+DENTRO DO SWITCH
+
+-----CASE 1-----
+for (int i = 0; i < produtos.size(); i++) {
+    produtos.get(i).mostrarProduto(i + 1);
+}
+Passeia pela prateleira toda mostrando cada
+ produto, ISSO ENQUANTO I for menor que o tamanho total da prateleira
+
+ int escolha = scanner.nextInt();
+if (escolha < 1 || escolha > produtos.size()) {
+    System.out.println("Produto invalido.");
+    break;
+}
+
+System.out.print("\nEscolha o produto: ");
+                    int escolha = scanner.nextInt();
+lê o produto que voc~e escolheu e armazena em escolha
+
+if (escolha < 1 || escolha > produtos.size()) {
+                        System.out.println("Produto invalido.");
+                        break;
+                    }
+se o numero for menor que 1 ou maior que o numero total existente
+ de produtos, o que vocÊ ta querendo não é existente, logo invalido
+
+   Produto produtoEscolhido = produtos.get(escolha - 1);
+ Pega o produto certinho da prateleira pq os array começam em zero
+  entao por mais que a maça esteja mostrando ser o numero 1
+   para buscar ela no array, ela vai ta armazenada na posição 0
+
+    pedido.adicionarItem(
+                        produtoEscolhido,
+                        quantidade
+                    );
+na função adicionarItem VAMOS armazenar o produto e quantidade 
+escolhidas em pedido(variavel)
+
+-----CASE 2-----
+se {
+estaVazio() for chamado  é pq ta vazio
+}
+senao{
+chama mostrarPedido()  e ele também imprime as mensagens 
+ de "Pedido finalizado!" e "Obrigado por comprar...".
+}

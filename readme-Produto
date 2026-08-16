@@ -1,0 +1,31 @@
+PRODUTO - APRENDIZADO
+
+ this.nome = nome;
+        this.preco = preco;
+        this.estoque = estoque;
+        this.categoria = categoria;
+chega alguém trazendo 4 coisas na mão 
+(nome, preço, estoque, categoria) 
+e a caixinha guarda(this) cada uma na gaveta certa
+
+public String getNome() { return nome; }
+espiando pela janelinha pra saber o nome e retorna o que ele viu
+public double getPreco() { return preco; }
+public int getEstoque() { return estoque; }
+public Categoria getCategoria() { return categoria; }
+
+
+Continha para tirar estoque
+public boolean retirarEstoque(int quantidade) {
+se a pessoa pedir mais do que a quantidade existente, 0, ou menos que 0
+nao faz sentido logo o valor é falso
+    if (quantidade <= 0 || quantidade > estoque) {
+        return false;
+    }
+
+    senao ele faz o seguinte: estoque = estoque - quantidade
+    e retorna veraddeiro 
+
+    estoque -= quantidade;
+    return true;
+}

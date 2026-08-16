@@ -1,0 +1,26 @@
+ITEM PEDIDO - APRENDIZADO
+
+---caixinha que guarda o que eu pedi---
+
+public class ItemPedido  é onde vai armazenar o que eu pedi
+(produto) dentro de this.produto (que é um objeto) 
+
+---caixinha dos calculos---
+
+public double calcularSubtotal() {
+        return produto.getPreco() * quantidade;
+    }
+    aqui ela vai perguntar la na caixiinha que guardou o que eu quero 
+    chama aqui dentro, pega o preço daquele produto que eu escolhi
+    e faz sua continha
+
+---caixinha mostrar itens---
+
+    "%d x %-20s R$ %.2f%n",
+            quantidade,
+            produto.getNome(),
+            calcularSubtotal()
+ chama a quantidade que foi armazenada 
+ la na primeira caixinha, pega o nome do produto
+ que também foi escolhido na primeira caixa
+ e mostra a segundo caixa

@@ -1,0 +1,72 @@
+PEDIDO - APRENDIZADO
+
+meu Pedido terá uma lista chamada itens
+ private ArrayList<ItemPedido> itens;
+pega o arraylist la do main que guardava produtos 
+do cardapio inteirinho, so que envez de guardar tudo isso
+ aqui a gente vai guardar somente o que foi escolhido pelo usuario
+ não o cardapio inteiro
+
+   itens = new ArrayList<>();
+   é como se fosse uma rray so com itens que quero do cardapio
+
+   ---ADICIONARITEM---
+
+    if (produto.retirarEstoque(quantidade)) {
+
+            ItemPedido item = new ItemPedido(produto, quantidade);
+
+            itens.add(item);
+
+            System.out.println("\nProduto adicionado ao carrinho!");
+
+        } else {
+
+            System.out.println("\nQuantidade indisponível no estoque.");
+        }
+ 
+
+
+        produto.retirarEstoque(quantidade)
+        ----------ou----------
+        essa quantidade que a pessoa quer no estoque existe?
+
+        SE FOR TRUE sim, tinha e já tirei
+        SE FOR FALSE  não, não tinha o suficiente 
+
+        se for false so fala que não tem(pula pro else)
+        se for true adiciona o item em itens
+           itens.add(item);
+
+
+
+Você tem uma lista, mas cada elemento dessa lista não é uma 
+coisa solta. Cada elemento é um ItemPedido, e cada ItemPedido 
+tem seus próprios dados
+crio um ItemPedido juntando os dois → coloco esse item dentro da lista do pedido.
+ItemPedido item = new ItemPedido(produto, quantidade);
+           Produto: Café Expresso
+           Quantidade: 3
+           Isso é um ItemPedido.
+
+   variável chamada item que guarda um objeto ItemPedido
+   =
+   criando um novo objeto da classe ItemPedido
+   passando duas informações para ele:
+   ItemPedido[
+produto: Café  
+quantidade: 3 
+   ]
+
+
+---Calcular total---
+
+double total = 0;
+ para cada item (que é do tipo ItemPedido) dentro da lista itens, faz isso aqui
+    for (ItemPedido item : itens) {
+
+        total += item.calcularSubtotal();
+    }
+    return total; devolve o total
+  passeia por cada item que existe no ItemPedido
+  e pergunta quanto ele custa e adiciona na variavel total
