@@ -1,4 +1,4 @@
-#  Loja Java
+#  Loja Java no TERMINAL
 
 Um projeto de **loja online desenvolvido em Java**, criado durante meus estudos autodidatas de Programação Orientada a Objetos (POO).
 
